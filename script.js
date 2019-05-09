@@ -29,24 +29,40 @@ $(document).ready(function(){
   })
   
   //Keep track of the user toggling each item and create an event listener
-  $(document).on("click", ".checked-item", function(){
+//   $(document).on("click", ".checked-item", function(){
     
-    //capture the current list item user is clicking on
-    //because we dont know how many lists / items we'll put 
-    //this special keyword  -- wathever we click on, we pass it as this
-    //when we pass it, and we check on, i'll return to 
-    $(this).parent().toggleClass("is-it-checked");
-  })
+//     //capture the current list item user is clicking on
+//     //because we dont know how many lists / items we'll put 
+//     //this special keyword  -- wathever we click on, we pass it as this
+//     //when we pass it, and we check on, i'll return to 
+//     $(this).parent().toggleClass("is-it-checked");
+//   })
     
-//ad and event listener to the check button
- $('.Check').on('click', function(e)
- {
-   console.log(e);
-   //prevent the default browser/form action from happening
-   e.preventDefault();
-   //remove the checked item
-   $('.is-it-checked').remove();
- })
+// //ad and event listener to the check button
+//  $('checked-item').on('click', function(e)
+//  {
+//    console.log(e);
+//    //prevent the default browser/form action from happening
+//    e.preventDefault();
+//    //remove the checked item
+//    $('is-it-checked').remove();
+//  })
+
+    $(document).on('click', '.checked-item', function() {
+      // capture the current list item user is clicking on
+      $(this).parent().toggleClass('it-is-checked');
+    });
+    
+    // add an event listener to the check button
+    $('.checked').on('click', function(e) {
+      
+      // prevent the default action on the event
+      e.preventDefault();
+      
+      // remove the checked items
+      $('.it-is-checked').remove();
+    });
+    
  $('.reset-list').on('click', function(e)
  {
    console.log(e);
